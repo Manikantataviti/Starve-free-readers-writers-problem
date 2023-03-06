@@ -54,8 +54,8 @@ WAIT(decider_mutex);
 ``` cpp
                   WAIT(decider_mutex);
                   
-                  WAIT(mutex);
-                                      //  reader m1 enters//
+                  WAIT(mutex)
+                       read_count ++;               //  reader m1 enters//
                   if(read_count==1)
                     WAIT(wrt);
                     
@@ -66,7 +66,7 @@ WAIT(decider_mutex);
                     WAIT(decider_mutex);
                   
                   WAIT(mutex);
-                                      //  reader m2 enters//
+                         read_count++;             //  reader m2 enters//
                   if(read_count==1)
                     WAIT(wrt);
                     
@@ -82,7 +82,7 @@ WAIT(decider_mutex);
                     -------------------------------
 
                           reading is performed  // **control section** //
-
+                           read count--;
                     -------------------------------
                     WAIT(mutex);
                     
