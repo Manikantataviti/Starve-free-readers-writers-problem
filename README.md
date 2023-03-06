@@ -33,7 +33,7 @@ shared data can be files, data base e.t.c
                       
                       
 # starve free Solution:
-##### we are using decider_mutex semaphore to make sure mutual exclusion between each of (readers plus writers) i.e whether reader have to enter into the critical section or writer ,and i am making use of wrt semaphore to make sure mutual exclusion between readers and each of writers, so i am calling wait fuction when reader enters into critical section and releasing semaphore when read count becomes zero and i am using mutex semaphore to ensure mutual exclusion between only writers seperately.
+we are using decider_mutex semaphore to make sure mutual exclusion between each of (readers plus writers) i.e whether reader have to enter into the critical section or writer ,and i am making use of wrt semaphore to make sure mutual exclusion between readers and each of writers, so i am calling wait fuction when reader enters into critical section and releasing semaphore when read count becomes zero and i am using mutex semaphore to ensure mutual exclusion between only writers seperately.
 
 
 ## Pseudo code for Starve-free writers process
