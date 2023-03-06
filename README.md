@@ -24,7 +24,7 @@ shared data can be files, data base e.t.c
                     
 
   SIGNAL(Semaphore *S){
-                      S->value--;
+                      S->value++;
                        if(S->value<0)
                                       { Remove a process P to Combined_Queue;
                                               wake up(P);}
