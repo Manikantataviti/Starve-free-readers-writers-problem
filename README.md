@@ -15,21 +15,21 @@ shared data can be files, data base e.t.c
  ## WAIT and SIGNAL function declaration
  WAIT(Semaphore *S){
                       S->value--;
-                       if(S->value<0){
+                       if(S->value<0)
                                        add this process P to Combined_Queue;
                                               block();
 
-                                     }
-                    }
+                                     
+                    
 
-  SIGNAL(Semaphore *S){
+  SIGNAL(Semaphore *S)
                       S->value--;
-                       if(S->value<0){
+                       if(S->value<0)
                                        Remove a process P to Combined_Queue;
                                               wake up(P);
 
-                                     }
-                      }
+                                     
+                      
                       
 ## starve free Solution:
 
@@ -45,15 +45,20 @@ WAIT(decider_mutex);
                  
                  --------------------------
                   SIGNAL(wrt);
+                  
                   SIGNAL(decider_mutex);
 ```                  
 ## Starve-free readers process
 ``` cpp
                   WAIT(decider_mutex);
+                  
                   WAIT(mutex);
+                  
                   if(read_count==1)
                     WAIT(wrt);
+                    
                     SIGNAL(mutex);
+                    
                     SIGNAL(decider_mutex);
                     -------------------------------
 
@@ -61,8 +66,10 @@ WAIT(decider_mutex);
 
                     -------------------------------
                     WAIT(mutex);
+                    
                     if(read_count==0)
                          SIGNAL(wrt);
+                         
                          SIGNAL(mutex);
  ```                        
                          
