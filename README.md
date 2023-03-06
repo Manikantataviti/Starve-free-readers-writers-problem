@@ -55,13 +55,30 @@ WAIT(decider_mutex);
                   WAIT(decider_mutex);
                   
                   WAIT(mutex);
-                  
+                                      //  reader m1 enters//
                   if(read_count==1)
                     WAIT(wrt);
                     
                     SIGNAL(mutex);
                     
                     SIGNAL(decider_mutex);
+                    
+                    WAIT(decider_mutex);
+                  
+                  WAIT(mutex);
+                                      //  reader m2 enters//
+                  if(read_count==1)
+                    WAIT(wrt);
+                    
+                    SIGNAL(mutex);
+                    
+                    SIGNAL(decider_mutex);
+                         :
+                         :
+                         :
+                         :
+                         :
+                         and so on
                     -------------------------------
 
                           reading is performed  // **control section** //
