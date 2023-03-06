@@ -32,7 +32,7 @@ shared data can be files, data base e.t.c
 ```                                     
                       
                       
-## starve free Solution:
+# starve free Solution:
 
 
 ## Pseudo code for Starve-free writers process
@@ -49,7 +49,7 @@ WAIT(decider_mutex);
                   
                   SIGNAL(decider_mutex);
 ```                  
-## Starve-free readers process
+## Pseudo code for Starve-free readers process
 ``` cpp
                   WAIT(decider_mutex);
                   
