@@ -13,6 +13,7 @@ shared data can be files, data base e.t.c
                                 3)decider_mutex=1  
                                 4)read_count=0  //indicates the no.of readers reading the file at that instant
  ## WAIT and SIGNAL function declaration
+ ``` cpp
  WAIT(Semaphore *S){
                       S->value--;
                        if(S->value<0)
@@ -28,7 +29,7 @@ shared data can be files, data base e.t.c
                                        Remove a process P to Combined_Queue;
                                               wake up(P);
 
-                                     
+```                                     
                       
                       
 ## starve free Solution:
