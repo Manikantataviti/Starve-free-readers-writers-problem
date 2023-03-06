@@ -17,18 +17,18 @@ shared data can be files, data base e.t.c
  WAIT(Semaphore *S){
                       S->value--;
                        if(S->value<0)
-                                       add this process P to Combined_Queue;
-                                              block();
-
+                                      { add this process P to Combined_Queue;
+                                              block();}
+                  }
                                      
                     
 
-  SIGNAL(Semaphore *S)
+  SIGNAL(Semaphore *S){
                       S->value--;
                        if(S->value<0)
-                                       Remove a process P to Combined_Queue;
-                                              wake up(P);
-
+                                      { Remove a process P to Combined_Queue;
+                                              wake up(P);}
+}
 ```                                     
                       
                       
