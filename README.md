@@ -82,10 +82,10 @@ WAIT(decider_mutex);
                     -------------------------------
 
                           reading is performed  // **control section** //
-                           read count--;
+                   
                     -------------------------------
                     WAIT(mutex);
-                    
+                       read count--;
                     if(read_count==0)
                          SIGNAL(wrt);
                          
